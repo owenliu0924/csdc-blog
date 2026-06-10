@@ -16,7 +16,7 @@ const { date, lastMod, words, readingMinutes, class: className } = Astro.props
   <div>
     <i class="iconfont icon-calendar"></i>
     <RelativeDate date={date} client:idle />
-    {lastMod && <span class="text-xs">(已编辑)</span>}
+    {lastMod && <span class="text-xs">(已編輯)</span>}
   </div>
   <div>
     <i class="iconfont icon-file-list"></i>
@@ -24,6 +24,6 @@ const { date, lastMod, words, readingMinutes, class: className } = Astro.props
   </div>
   <div>
     <i class="iconfont icon-timer"></i>
-    <span>{Math.ceil(readingMinutes)} 分钟</span>
+    <span>{Math.ceil(readingMinutes)} 分鐘</span>
   </div>
 </div>

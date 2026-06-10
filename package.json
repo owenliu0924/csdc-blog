@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "pnpm exec simple-git-hooks",
     "dev": "astro dev",
+    "convert:zh": "node scripts/convert-zh.js",
     "build": "astro check && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
@@ -58,7 +59,8 @@
     "micromark-util-symbol": "^2.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "simple-git-hooks": "^2.11.1"
+    "simple-git-hooks": "^2.11.1",
+    "opencc": "^1.0.5"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm exec commitlint --edit $1",

@@ -19,7 +19,7 @@ export function HeaderMetaInfoProvider({
   const setSlug = useSetAtom(metaSlugAtom)
 
   useEffect(() => {
-    // 去掉 pathName 结尾的 '/'
+    // 去掉 pathName 結尾的 '/'
     if (pathName !== '/') {
       setPathName(pathName.replace(/\/$/, ''))
     } else {

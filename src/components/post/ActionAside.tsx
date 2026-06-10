@@ -23,11 +23,11 @@ const shareList = [
     },
   },
   {
-    name: '复制链接',
+    name: '複製鏈接',
     icon: 'icon-link',
     onClick: (data: ShareData) => {
       navigator.clipboard.writeText(data.url)
-      toast.success('已复制到剪贴板')
+      toast.success('已複製到剪貼板')
     },
   },
 ]
@@ -52,7 +52,7 @@ function ShareButton() {
   const { present } = useModal()
 
   const url = new URL(postSlug, site.url).href
-  const text = `嘿，我发现了一片宝藏文章「${postTitle}」哩，快来看看吧！`
+  const text = `嘿，我發現了一片寶藏文章「${postTitle}」哩，快來看看吧！`
 
   const openModal = () => {
     present({
@@ -80,7 +80,7 @@ function ShareModal({ url, text }: { url: string; text: string }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
     >
-      <h2 className="px-3 py-1 font-bold">分享此内容</h2>
+      <h2 className="px-3 py-1 font-bold">分享此內容</h2>
       <hr className="my-2 border-primary" />
       <div className="px-3 py-2 grid grid-cols-[180px_auto] gap-3">
         <QR.QRCodeSVG value={url} size={180} />
@@ -134,14 +134,14 @@ function DonateContent() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 20, opacity: 0 }}
     >
-      <h2 className="text-center mb-5">感谢您的支持，这将成为我前进的最大动力。</h2>
+      <h2 className="text-center mb-5">感謝您的支持，這將成爲我前進的最大動力。</h2>
       <div className="flex flex-wrap gap-4 justify-center">
         <img
           className="object-cover"
           width={300}
           height={300}
           src={sponsor.wechat}
-          alt="微信赞赏码"
+          alt="微信讚賞碼"
           loading="lazy"
           decoding="async"
         />

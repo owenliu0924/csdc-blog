@@ -32,7 +32,8 @@ const { md } = Astro.props
 
 const { headings, Content } = await md.render()
 
-const isPageLayout = ['friends', 'projects'].includes(md.slug)
+const slug = md.slug as string
+const isPageLayout = ['friends', 'projects'].includes(slug)
 const isMdContentEmpty = md.body.trim().length === 0
 ---
 
@@ -46,8 +47,8 @@ const isMdContentEmpty = md.body.trim().length === 0
           </h1>
           <p>{md.data.description}</p>
         </header>
-        {md.slug === 'friends' && <FriendList />}
-        {md.slug === 'projects' && <ProjectList />}
+        {slug === 'friends' && <FriendList />}
+        {slug === 'projects' && <ProjectList />}
         {!isMdContentEmpty && (
           <MarkdownWrapper>
             <Content />
@@ -62,7 +63,7 @@ const isMdContentEmpty = md.body.trim().length === 0
       description={md.data.description}
       mdTitle={md.data.title}
       mdDescription={md.data.description}
-      mdSlug={md.slug}
+      mdSlug={slug}
     >
       <div
         class="max-w-[1100px] mx-auto px-4 md:px-8 py-16 grid lg:grid-cols-[auto_260px] gap-8"

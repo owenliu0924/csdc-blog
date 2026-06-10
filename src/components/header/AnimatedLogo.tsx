@@ -1,12 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useShouldHeaderMetaShow, useIsMobile } from './hooks'
+import { useShouldHeaderMetaShow } from './hooks'
 import { author } from '@/config.json'
 
-export function AnimatedLogo() {
-  const isMobile = useIsMobile()
+export function AnimatedLogo({ fadeOnScroll = false }: { fadeOnScroll?: boolean }) {
   const shouldHeaderMetaShow = useShouldHeaderMetaShow()
 
-  if (!isMobile) {
+  if (!fadeOnScroll) {
     return <Logo />
   }
 

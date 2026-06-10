@@ -10,13 +10,13 @@ interface Props {
 const { prev, next, class: className } = Astro.props
 ---
 
-<div class="grid grid-cols-2" class:list={[className]}>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4" class:list={[className]}>
   <div>
     {
       prev && (
         <a class="flex items-baseline gap-2 hover:text-accent" href={`/posts/${prev.slug}`}>
-          <i class="iconfont icon-arrow-left" />
-          <span>{prev.data.title}</span>
+          <i class="shrink-0 iconfont icon-arrow-left" />
+          <span class="line-clamp-2 sm:line-clamp-none">{prev.data.title}</span>
         </a>
       )
     }
@@ -25,11 +25,11 @@ const { prev, next, class: className } = Astro.props
     {
       next && (
         <a
-          class="flex items-baseline justify-end gap-2 hover:text-accent"
+          class="flex items-baseline justify-start sm:justify-end gap-2 hover:text-accent"
           href={`/posts/${next.slug}`}
         >
-          <span>{next.data.title}</span>
-          <i class="iconfont icon-arrow-right" />
+          <span class="line-clamp-2 sm:line-clamp-none">{next.data.title}</span>
+          <i class="shrink-0 iconfont icon-arrow-right" />
         </a>
       )
     }

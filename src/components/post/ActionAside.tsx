@@ -75,21 +75,21 @@ function ShareButton() {
 function ShareModal({ url, text }: { url: string; text: string }) {
   return (
     <motion.div
-      className="bg-primary rounded-lg p-2 min-w-[420px] border border-primary flex flex-col"
+      className="bg-primary rounded-lg p-4 w-[90vw] max-w-[420px] border border-primary flex flex-col"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
     >
-      <h2 className="px-3 py-1 font-bold">分享此內容</h2>
+      <h2 className="px-1 py-1 font-bold">分享此內容</h2>
       <hr className="my-2 border-primary" />
-      <div className="px-3 py-2 grid grid-cols-[180px_auto] gap-3">
+      <div className="px-1 py-2 grid grid-cols-1 sm:grid-cols-[180px_auto] gap-4 justify-items-center sm:justify-items-stretch">
         <QR.QRCodeSVG value={url} size={180} />
-        <div className="flex flex-col gap-2">
-          <div className="text-sm">分享到...</div>
+        <div className="flex flex-col gap-2 w-full">
+          <div className="text-sm text-center sm:text-left">分享到...</div>
           <ul className="flex flex-col gap-2">
             {shareList.map((item) => (
               <li
-                className="px-2 py-1 flex gap-2 cursor-pointer rounded-md hover:bg-secondary"
+                className="px-2 py-1 flex gap-2 cursor-pointer rounded-md hover:bg-secondary justify-center sm:justify-start"
                 key={item.name}
                 onClick={() => item.onClick({ url, text })}
                 role="button"
@@ -137,7 +137,7 @@ function DonateContent() {
       <h2 className="text-center mb-5">感謝您的支持，這將成爲我前進的最大動力。</h2>
       <div className="flex flex-wrap gap-4 justify-center">
         <img
-          className="object-cover"
+          className="object-cover max-w-full h-auto rounded-lg"
           width={300}
           height={300}
           src={sponsor.wechat}

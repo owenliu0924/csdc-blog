@@ -20,7 +20,7 @@ if (current < total)
   items.push({ isButton: true, page: current + 1, icon: 'right', label: '下一頁' })
 ---
 
-<div class="mt-12 flex items-center justify-center gap-2">
+<div class="mt-12 flex flex-wrap items-center justify-center gap-2">
   {
     items.map((item) => {
       if (item.isButton) {

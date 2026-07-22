@@ -135,17 +135,19 @@ function DonateContent() {
       exit={{ y: 20, opacity: 0 }}
     >
       <h2 className="text-center mb-5">感謝您的支持，這將成爲我前進的最大動力。</h2>
-      <div className="flex flex-wrap gap-4 justify-center">
-        <img
-          className="object-cover max-w-full h-auto rounded-lg"
-          width={300}
-          height={300}
-          src={sponsor.wechat}
-          alt="微信讚賞碼"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      {sponsor.wechat ? (
+        <div className="flex flex-wrap gap-4 justify-center">
+          <img
+            className="object-cover max-w-full h-auto rounded-lg"
+            width={300}
+            height={300}
+            src={sponsor.wechat}
+            alt="讚賞碼"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      ) : null}
     </motion.div>
   )
 }

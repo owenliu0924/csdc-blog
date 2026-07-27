@@ -16,15 +16,27 @@ interface Props {
   title?: string
   description?: string
   image?: string
+  type?: 'website' | 'article'
+  pubDate?: Date
+  lastMod?: Date
+  tags?: string[]
 }
 
-const { title, description, image } = Astro.props
+const { title, description, image, type, pubDate, lastMod, tags } = Astro.props
 ---
 
 <!doctype html>
 <html lang={site.lang}>
   <head>
-    <CommonHead title={title} description={description} image={image} />
+    <CommonHead 
+      title={title} 
+      description={description} 
+      image={image} 
+      type={type}
+      pubDate={pubDate}
+      lastMod={lastMod}
+      tags={tags}
+    />
     <WebAnalytics />
     <ThemeLoader />
     <AccentColorInjector />

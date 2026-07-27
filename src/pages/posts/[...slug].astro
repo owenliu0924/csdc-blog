@@ -59,6 +59,10 @@ const lastMod = current.data.lastMod || current.data.date
   mdTitle={current.data.title}
   mdDescription={mdDescription}
   mdSlug={mdSlug}
+  type="article"
+  pubDate={current.data.date}
+  lastMod={lastMod}
+  tags={current.data.tags}
 >
   <div
     class="max-w-[1100px] mx-auto px-4 md:px-8 py-16 grid lg:grid-cols-[1fr_260px] gap-8"

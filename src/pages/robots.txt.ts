@@ -4,9 +4,6 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 
-Disallow: /_astro/
-Disallow: /fonts/
-
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim()
 

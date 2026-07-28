@@ -2,8 +2,8 @@
   "site": {
     "url": "https://blog.csdc.tw",
     "title": "竹中軟研 CSDC",
-    "description": "新竹高中軟體研究社",
-    "keywords": "csdc, 竹中, 軟研, 新竹高中, 軟體研究社, 程式設計, 電腦科學, hchs",
+    "description": "竹中軟研 CSDC (新竹高中軟體研究社)，是竹中最具代表性的程式設計與電腦科學社團。我們探索寫程式的樂趣，學習演算法、開發專案，歡迎對資訊科技有熱忱的竹中人加入！",
+    "keywords": "csdc, 竹中, 軟研, 新竹高中, 竹中社團, 軟體研究社, 程式設計, 電腦科學, hchs, 竹中程式設計, 竹中資訊",
     "lang": "zh-TW",
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/csdc.png"

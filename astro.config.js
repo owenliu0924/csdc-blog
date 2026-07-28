@@ -18,9 +18,12 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import swup from '@swup/astro'
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: site.url,
+
   integrations: [
     tailwind(),
     react(),
@@ -32,6 +35,7 @@ export default defineConfig({
       morph: ['[component-export="Provider"]'],
     }),
   ],
+
   markdown: {
     syntaxHighlight: false,
     smartypants: false,
@@ -48,6 +52,7 @@ export default defineConfig({
     ],
     remarkRehype: { footnoteLabel: '参考', footnoteBackLabel: '返回正文' },
   },
+
   vite: {
     build: {
       rollupOptions: {
@@ -55,4 +60,7 @@ export default defineConfig({
       },
     },
   },
+
+  output: "hybrid",
+  adapter: cloudflare()
 })

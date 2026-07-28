@@ -26,3 +26,9 @@ pnpm-debug.log*
 # Ignores posts with real names to protect student privacy
 src/content/posts/2026-06-01-102黃言真社長候選人政見.md
 src/content/posts/2026-06-02-115柯承遠社長候選人政見.md
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

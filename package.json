@@ -7,15 +7,18 @@
     "dev": "astro dev",
     "convert:zh": "node scripts/convert-zh.js",
     "build": "astro check && astro build && pagefind --site dist",
-    "preview": "astro preview",
+    "preview": "pnpm run build && wrangler dev",
     "astro": "astro",
     "lint": "prettier --write .",
     "new-friend": "node scripts/new-friend.js",
     "new-post": "node scripts/new-post.js",
-    "new-project": "node scripts/new-project.js"
+    "new-project": "node scripts/new-project.js",
+    "deploy": "pnpm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/cloudflare": "11",
     "@astrojs/markdown-remark": "^5.1.0",
     "@astrojs/react": "^3.3.0",
     "@astrojs/rss": "^4.0.5",
@@ -57,10 +60,11 @@
     "@inquirer/prompts": "^5.0.2",
     "lint-staged": "^15.2.2",
     "micromark-util-symbol": "^2.0.0",
+    "opencc": "^1.0.5",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "simple-git-hooks": "^2.11.1",
-    "opencc": "^1.0.5"
+    "wrangler": "^4.114.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm exec commitlint --edit $1",
